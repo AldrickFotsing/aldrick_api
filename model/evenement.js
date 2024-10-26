@@ -18,4 +18,4 @@ class Event{
     }
 }
 
-module.exports = { Event };
+module.exports = { Event }; //Pour exporter la classe Event dans d'autres fichiers

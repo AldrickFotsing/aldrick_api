@@ -66,7 +66,7 @@ const modifierEvent = async (req, res)=>{
         let nnombreLike = req.body.nombreLike;
         let nimage = req.body.image;
 
-        let result = await client.bd().collection("evenement").updateOne({_id : id}, {$set : {idEvent : nidEvent, nomEvent : nnomEvent, idCreateur: nidCreateurr, lieu : nlieu, dateCreation : ndateCreation, dateDebut : ndateDebut, dateFin: ndateFin, heure : nheure, description : ndescription, noParticipant : nnoParticipant, participant : nparticipant, categorie : ncategorie, commentaire : ncommentaire, nombreLike : nnombreLike, image : nimage}});
+        let result = await client.bd().collection("evenement").updateOne({_id : id}, {$set : {idEvent : nidEvent, nomEvent : nnomEvent, idCreateur: nidCreateur, lieu : nlieu, dateCreation : ndateCreation, dateDebut : ndateDebut, dateFin: ndateFin, heure : nheure, description : ndescription, noParticipant : nnoParticipant, participant : nparticipant, categorie : ncategorie, commentaire : ncommentaire, nombreLike : nnombreLike, image : nimage}});
         if(result.modifiedCount==1){
             res.status(200).json({msg : "Modification reussie"});
         }else{
@@ -103,4 +103,4 @@ const supprimerEvent = async (req, res)=>{
 };
 
 
-module.xports = { ajouterEvent, getTousEvent, getEvent, modifierEvent, supprimerEvent };
+module.exports = { ajouterEvent, getTousEvent, getEvent, modifierEvent, supprimerEvent };

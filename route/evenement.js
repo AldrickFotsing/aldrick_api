@@ -2,6 +2,8 @@ const express = require("express");
 const { ajouterEvent, getTousEvent, getEvent } = require("../controller/evenement");
 const router = express.Router();
 
+// On definit les points de terminaisons
+
 router.route("/evenement").post(ajouterEvent);
 router.route("/evenement").get(getTousEvent);
 router.route("/evenement/:id").get(getEvent);

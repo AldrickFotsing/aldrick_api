@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb");
 
 var client = null;
 
-function connecter(url, callback){
+function connecter(url, callback){  //Pour connecter notre appli a notre BD
     if(client==null){
         client = new MongoClient(url);
 
@@ -19,8 +19,8 @@ function connecter(url, callback){
     }
 }
 
-function bd(){
-    return new Db(client, "dbOk");
+function bd(){ //elle nous retourne une instance de la classe Db
+    return new Db(client, "dbOk");// dbOk: le nom de la BD
 }
 
 function fermerConnexion(){
@@ -30,4 +30,4 @@ function fermerConnexion(){
     }
 }
 
-module.exports = {connecter, bd, fermerConnexion};
+module.exports = { connecter, bd, fermerConnexion }; //Pour exporter les fonctions dans les autres fichiers

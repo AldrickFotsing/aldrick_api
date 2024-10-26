@@ -14,7 +14,7 @@ connecter("mongodb://127.0.0.1:27017/", (erreur)=>{
     }else{
         console.log("Connexion avec la base de donnee etablie");
     }
-})
+});
 
 app.listen(3000);
 console.log('Attentes des requetes au port 3000');
